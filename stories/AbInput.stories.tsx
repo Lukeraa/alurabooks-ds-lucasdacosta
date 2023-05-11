@@ -7,7 +7,13 @@ import { Meta, StoryFn } from '@storybook/react'
 export default {
 
     title: 'components/AbInput',
-    component: AbInput
+    component: AbInput,
+    argTypes: {
+        label: {
+            control: 'text'
+        }
+      },
+    parameters: { actions: { argTypesRegex: '^on.*' } },
 
 } as Meta<typeof AbInput>
 
@@ -16,6 +22,6 @@ const Template: StoryFn<typeof AbInput> = (args) => <AbInput {...args}/>
 export const Primary = Template.bind({})
 
 Primary.args = {
-    title: 'E-mail',
-    placeHolder: 'seuemail@email.com',
+    label: 'E-mail',
+    placeholder: 'seuemail@email.com',
 } as AbInputProps
